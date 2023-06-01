@@ -240,7 +240,7 @@
 
   演示如下:
 
-  <img src="README.assets/运行.gif" alt="show" />
+  <img src="README.assets/调试.gif" alt="show" />
 
   
 
