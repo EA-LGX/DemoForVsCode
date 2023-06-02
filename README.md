@@ -61,13 +61,13 @@
 
 ### 二、配置VsCode+QT
 
-##### 1.安装VsCode插件
+#### 1.安装VsCode插件
 
 - 确保你的VsCode程序中安装有C\C++ Extension Pack插件，如下图
 
   ![1685640450339](README.assets/1685640450339.png)
 
-##### 2.使用VsCode打开你的QT工程
+#### 2.使用VsCode打开你的QT工程
 
 - 演示如下
 
@@ -75,7 +75,7 @@
 
   😫打开之后，点开main.cpp，此时应该会看到，头文件的部分报错。请看下面第2点解决。
 
-##### 2.添加包含的头文件路径，即include文件夹所在位置
+#### 2.添加包含的头文件路径，即include文件夹所在位置
 
 如果指定头文件的路径，VsCode就不知道你的代码里面的头文件是在哪里，导致代码报红
 
@@ -93,7 +93,7 @@
 
 
 
-##### 3.配置launch.json和tasks.json
+#### 3.配置launch.json和tasks.json
 
 - 在`.vscode`文件夹下创建`tasks.json`(如果没有这个目录就自己建一个)
 
@@ -247,5 +247,5 @@
   
 
 - 演示用的Demo工程已上传至
-[GitHub](https://github.com/EA-LGX/Demo/tree/master)
+[GitHub](https://github.com/EA-LGX/Demo/tree/master)\[Gitee]([https://github.com/EA-LGX/Demo/tree/master](https://gitee.com/lu_guang_xing/Demo))
   ## 自此完结，撒花！！！🎉🎉🎉
