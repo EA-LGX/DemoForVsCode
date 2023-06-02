@@ -1,31 +1,19 @@
 {
     "tasks": [
-        
-        // 任务：qmake 根据.pro文件生成 Makefile，通常是.pro文件改动后才需要执行
-        //      这个任务的执行等效命令行 >> cd build
-        //                           >> qmake ../Demo.pro
         {
             "type": "shell",
             "label": "qmake",
             "options": {
-                
-                // cwd的意思是执行这个命令的时候，所在的目录
-                // 这里我们指定为工程目录下的build文件夹，这样的话
-                // 当执行qmake的时候，产生的中间文件就在build文件夹下面了
                 "cwd": "${workspaceFolder}\\build"
             },
-            "command": "qmake",  //command 命令，这个不用说了
+            "command": "qmake",
             "args": [
-                // qmake后面跟的参数，因为上面cwd配置为build目录，
-                // 所以.pro文件应该在build的上一级，所以使用../*.pro
-                "../*.pro" 
+                "../*.pro"
             ],
+            "problemMatcher": []
         },
-        
-        // 任务：编译 每次修改代码后都需要执行
-        //      任务等效命令行  >>make -j16 debug
         {
-            "label": "make",
+            "label": "build-debug",
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
@@ -38,12 +26,24 @@
                 "-j16",
                 "debug"
             ],
-            "dependsOn": [
-                //"qmake"
-            ]
+            "dependsOn": []
         },
-        
-        // 任务：清理 等效命令行 make clean
+        {
+            "label": "build-release",
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "make",
+            "args": [
+                "-j16",
+                "release"
+            ],
+            "dependsOn": []
+        },
         {
             "label": "clean",
             "options": {
@@ -52,22 +52,47 @@
             "command": "make",
             "args": [
                 "clean"
-            ]
+            ],
+            "problemMatcher": []
         },
-
-        // 运行程序
         {
-            "label": "run",
+            "label": "运行QT",
             "options": {
-                "cwd": "${workspaceFolder}\\build\\debug"
+                "cwd": "${workspaceFolder}\\build\\release"
             },
             "command": "${workspaceFolderBasename}.exe",
             "args": [
                 ""
             ],
             "dependsOn": [
-                "make"
+                "build-release"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "打开QtCreator",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "D:\\Qt\\Qt5.12.11\\Tools\\QtCreator\\bin\\qtcreator.exe",
+            "args": [
+                "${workspaceFolderBasename}.pro"
             ]
+        },
+        {
+            "label": "部署QT",
+            "options": {
+                "cwd": "${workspaceFolder}\\build\\release"
+            },
+            "command": "windeployqt",
+            "args": [
+                "${workspaceFolderBasename}.exe"
+            ],
+            "dependsOn": [
+                "clean",
+                "build-release"
+            ],
+            "problemMatcher": []
         }
     ],
     "version": "2.0.0"

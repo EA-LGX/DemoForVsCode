@@ -21,7 +21,7 @@
                 }
             ],
             // 调试之前先编译一下,即对应tasks.json任务中的make
-            "preLaunchTask": "make"//与tasks.json文件里的label名对应
+            "preLaunchTask": "build-debug"//与tasks.json文件里的label名对应
         }
     ]
 }
