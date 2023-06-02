@@ -242,10 +242,6 @@
 
   <img src="README.assets/调试.gif" alt="show" />
 
-  
-
-  
-
-- 演示用的Demo工程已上传至
-[GitHub](https://github.com/EA-LGX/Demo/tree/master)和[Gitee]([https://github.com/EA-LGX/Demo/tree/master](https://gitee.com/lu_guang_xing/Demo))
+  演示用的Demo工程已上传至
+  [GitHub](https://github.com/EA-LGX/Demo/tree/master)和[Gitee](https://gitee.com/lu_guang_xing/Demo)
   ## 自此完结，撒花！！！🎉🎉🎉
