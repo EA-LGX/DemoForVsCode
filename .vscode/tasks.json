@@ -2,7 +2,7 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "qmake",
+            "label": "QT_Qmake",
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
@@ -13,7 +13,7 @@
             "problemMatcher": []
         },
         {
-            "label": "build-debug",
+            "label": "QT_构建Debug",
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
@@ -29,7 +29,7 @@
             "dependsOn": []
         },
         {
-            "label": "build-release",
+            "label": "QT_构建Release",
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
@@ -45,7 +45,7 @@
             "dependsOn": []
         },
         {
-            "label": "clean",
+            "label": "QT_清理",
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
@@ -56,7 +56,7 @@
             "problemMatcher": []
         },
         {
-            "label": "运行QT",
+            "label": "QT_运行",
             "options": {
                 "cwd": "${workspaceFolder}\\build\\release"
             },
@@ -65,22 +65,23 @@
                 ""
             ],
             "dependsOn": [
-                "build-release"
+                "QT_构建Release"
             ],
             "problemMatcher": []
         },
         {
-            "label": "打开QtCreator",
+            "label": "QT_打开QtCreator",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
             "command": "D:\\Qt\\Qt5.12.11\\Tools\\QtCreator\\bin\\qtcreator.exe",
             "args": [
                 "${workspaceFolderBasename}.pro"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
-            "label": "部署QT",
+            "label": "QT_部署",
             "options": {
                 "cwd": "${workspaceFolder}\\build\\release"
             },
@@ -89,9 +90,21 @@
                 "${workspaceFolderBasename}.exe"
             ],
             "dependsOn": [
-                "clean",
-                "build-release"
+                "QT_清理",
+                "QT_构建Release"
             ],
+            "problemMatcher": []
+        },
+        {
+            "label": "QT_设计师",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "designer",
+            "args": [
+                "${file}"
+            ],
+            "dependsOn": [],
             "problemMatcher": []
         }
     ],

@@ -5,7 +5,7 @@
             "name": "gdb",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\build\\debug\\Demo",//程序可执行文件的完整路径。
+            "program": "${fileDirname}\\build\\debug\\${workspaceFolderBasename}", //程序可执行文件的完整路径。
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -21,7 +21,7 @@
                 }
             ],
             // 调试之前先编译一下,即对应tasks.json任务中的make
-            "preLaunchTask": "build-debug"//与tasks.json文件里的label名对应
+            "preLaunchTask": "QT_构建Debug" //与tasks.json文件里的label名对应
         }
     ]
 }
