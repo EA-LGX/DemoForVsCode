@@ -1,13 +1,126 @@
-# Demo
-## 适用于VsCode的QT(qmake)工程
+# 适用于VsCode的QT模板工程
 
-环境（Environment）：
+A Qt Template Project For VsCode,which allows you to develop QT through VsCode ! 
 
-📌Windows11
+![DemoForVsCode](https://socialify.git.ci/EA-LGX/DemoForVsCode/image?description=1&descriptionEditable=%E9%80%82%E7%94%A8%E4%BA%8EVsCode%E7%9A%84QT%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B&font=Inter&forks=1&issues=1&language=1&name=1&owner=1&pattern=Floating%20Cogs&pulls=1&stargazers=1&theme=Light)
 
-📌Qt5.12.11+ MinGW64 编译套件
 
-📌VsCode (version = 1.78.2)
+
+### How To Use？🙌
+
+##### 1. Clone This Project Or Download the Zip
+
+```shell
+git clone git@github.com:EA-LGX/DemoForVsCode.git
+```
+
+##### 2. Rename The Project's Name What You Like
+
+- Rename the `Project Folder`
+
+- Rename the file `DemoForVsCode.pro` 
+
+  🥸**pay attention:** The name of `project's folder` should be the same as  `xxx.pro` ! ! !
+
+##### 3. Edit And Specify The Path To Your Development Environment
+
+- Open this Project by VsCode
+
+- Specify your `GDB` path in launch.json at line 15 , such as:
+
+  ```json
+  15  "miDebuggerPath": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\gdb"
+  ```
+
+- Edit the `includePath` in c_cpp_properties.json  at line 7 , such as:
+
+  ```json
+  7   "D:\\Qt\\Qt5.12.11\\5.12.11\\mingw73_64\\include\\**"
+  ```
+
+  🥸**Pay attention:** Don't forget appen `**` to you path
+
+- Edit tasks.json file  
+
+  Specify `qmake` command at line 9 , such as:
+
+   ```json
+  9   "command": "D:\\Qt\\Qt5.12.11\\5.12.11\\mingw73_64\\bin\\qmake"
+   ```
+
+  Specify `mingw32-make` command at line 24 ,40 ,52 . such as:
+
+  ```json
+  24  "command": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\mingw32-make"
+  40  "command": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\mingw32-make"
+  52  "command": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\mingw32-make"
+  ```
+
+  Specify `qtcreator` command at line 77 , such as:
+
+  ```json
+  77  "command": "D:\\Qt\\Qt5.12.11\\Tools\\QtCreator\\bin\\qtcreator.exe"
+  ```
+
+  Specify `windeployqt` command at line 88 , such as:
+
+  ```json
+  88  "command": "D:\\Qt\\Qt5.12.11\\5.12.11\\mingw73_64\\bin\\windeployqt"
+  ```
+
+  Specify `designer` command at line 103 , such as:
+
+  ```json
+  103  "command": "D:\\Qt\\Qt5.12.11\\5.12.11\\mingw73_64\\bin\\designer"
+  ```
+
+  Configured Done !   Congratulate ! ! ! 🎉
+
+##### 4. Tasks Explain And Use ! 😁
+
+| Task                 |                          Explain                          | Equivalent command  |               Usage               |
+| :------------------- | :-------------------------------------------------------: | :-----------------: | :-------------------------------: |
+| QT_Qmake             |             Generate Makefile from .pro files             |    qmake xxx.pro    |             Just run              |
+| QT_BuildDebug        |   Generate Debug executable file according to Makefile    |     make debug      |             Just run              |
+| QT_BuildRelease      |  Generate Release executable file according to Makefile   |    make release     |             Just run              |
+| QT_Clean             |                   Clean the output file                   |     make clean      |             Just run              |
+| QT_Run               |                  Run the executable file                  |                     |             Just run              |
+| QT_OpenWithQtCreator |             Open the .pro file with QtCreator             |                     |             Just run              |
+| QT_Deploy            | Deploy,which copy the runtime files(such *.dll) to folder | windeployqt xxx.exe |             Just run              |
+| QT_Designer          |             Open the .ui file with QtDesigner             |                     | Select the .ui file,then run task |
+
+**🚀Examples && Test:** 
+
+- ▶️Run Qt: 
+
+  1. Click `Terminal` at Toolbars ,then select `run tasks` ,run  `QT_Qmake` Task 
+  2. Click `Terminal` at Toolbars ,then select `run tasks` ,run  `QT_Run` Task
+
+  <img src="README.assets/运行.gif" alt="show" />
+
+
+
+- 🪲Debug:
+
+  1. set a breakpoint ,then click Sidebar and select Debug
+
+  <img src="README.assets/调试.gif" alt="show" />
+
+
+
+​		**The End，And Enjoy😊**
+
+
+
+
+
+
+
+
+
+
+
+如果你想通过自己创建的项目或者在已有的项目中配置，那么下面的内容会教你如何应用到自己的项目当中。
 
 ---
 
@@ -59,6 +172,7 @@
 
 ---
 <span id="lable"></span>
+
 ### 二、配置VsCode+QT
 
 #### 1.安装VsCode插件
@@ -244,4 +358,5 @@
 
   演示用的Demo工程已上传至
   [GitHub](https://github.com/EA-LGX/Demo/tree/master)和[Gitee](https://gitee.com/lu_guang_xing/Demo)
+  
   ## 自此完结，撒花！！！🎉🎉🎉

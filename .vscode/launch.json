@@ -12,7 +12,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            //"miDebuggerPath": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\gdb.exe",
+            "miDebuggerPath": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
@@ -21,7 +21,7 @@
                 }
             ],
             // 调试之前先编译一下,即对应tasks.json任务中的make
-            "preLaunchTask": "QT_构建Debug" //与tasks.json文件里的label名对应
+            "preLaunchTask": "QT_BuildDebug" //与tasks.json文件里的label名对应
         }
     ]
 }

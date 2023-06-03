@@ -6,14 +6,14 @@
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
-            "command": "qmake",
+            "command": "D:\\Qt\\Qt5.12.11\\5.12.11\\mingw73_64\\bin\\qmake",
             "args": [
                 "../*.pro"
             ],
             "problemMatcher": []
         },
         {
-            "label": "QT_构建Debug",
+            "label": "QT_BuildDebug",
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
@@ -21,7 +21,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "make",
+            "command": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\mingw32-make",
             "args": [
                 "-j16",
                 "debug"
@@ -29,7 +29,7 @@
             "dependsOn": []
         },
         {
-            "label": "QT_构建Release",
+            "label": "QT_BuildRelease",
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
@@ -37,7 +37,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "make",
+            "command": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\mingw32-make",
             "args": [
                 "-j16",
                 "release"
@@ -45,18 +45,18 @@
             "dependsOn": []
         },
         {
-            "label": "QT_清理",
+            "label": "QT_Clean",
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
-            "command": "make",
+            "command": "D:\\Qt\\Qt5.12.11\\Tools\\mingw730_64\\bin\\mingw32-make",
             "args": [
                 "clean"
             ],
             "problemMatcher": []
         },
         {
-            "label": "QT_运行",
+            "label": "QT_Run",
             "options": {
                 "cwd": "${workspaceFolder}\\build\\release"
             },
@@ -65,12 +65,12 @@
                 ""
             ],
             "dependsOn": [
-                "QT_构建Release"
+                "QT_BuildRelease"
             ],
             "problemMatcher": []
         },
         {
-            "label": "QT_打开QtCreator",
+            "label": "QT_OpenWithQtCreator",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -81,26 +81,26 @@
             "problemMatcher": []
         },
         {
-            "label": "QT_部署",
+            "label": "QT_Deploy",
             "options": {
                 "cwd": "${workspaceFolder}\\build\\release"
             },
-            "command": "windeployqt",
+            "command": "D:\\Qt\\Qt5.12.11\\5.12.11\\mingw73_64\\bin\\windeployqt",
             "args": [
                 "${workspaceFolderBasename}.exe"
             ],
             "dependsOn": [
-                "QT_清理",
-                "QT_构建Release"
+                "QT_Clean",
+                "QT_BuildRelease"
             ],
             "problemMatcher": []
         },
         {
-            "label": "QT_设计师",
+            "label": "QT_Designer",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
-            "command": "designer",
+            "command": "D:\\Qt\\Qt5.12.11\\5.12.11\\mingw73_64\\bin\\designer",
             "args": [
                 "${file}"
             ],
