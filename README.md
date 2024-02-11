@@ -20,7 +20,7 @@ git clone git@github.com:EA-LGX/DemoForVsCode.git
 
 - Rename the file `DemoForVsCode.pro` 
 
-  🥸**pay attention:** The name of `project's folder` should be the same as  `xxx.pro` ! ! !
+  🥸**Notice:** The name of `project's folder` should be the same as  `xxx.pro` ! ! !
 
 ##### 3. Edit And Specify The Path To Your Development Environment
 
